@@ -1,0 +1,265 @@
+@import "globals";
+
+
+// HEADER
+
+header {
+    position: relative;
+    height: 812px;
+    background-image: url('mobile-images/lycs-architecture-H77w4l3UWy4-unsplash@2x.png');
+    background-size: cover;
+    background-position: center top;
+    color: white;
+
+    .darkening-linear {
+        position: absolute;
+        background: linear-gradient(0deg, black, transparent 80%);
+        opacity: 0.7;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .container {
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding-top: 13vw;
+        padding-bottom: 9vw;
+    }
+
+    img {
+        width: 15vw;
+        // margin: 14vw auto 64vh;
+        margin: 0 auto;
+
+    }
+
+    h1 {
+        font-family: Mostin Regular;
+        margin-bottom: 21px;
+    }
+
+    p {
+        width: 75%;
+        font-size: $small;
+        color: rgba(255, 255, 255, 0.59);
+    }
+}
+
+//MAIN
+
+main {
+
+    .container {
+
+        h2 {
+            margin: 7vw 0 8vw;
+            span {
+                font-family: Avenir Light;
+                text-transform: uppercase;
+                font-size: $small;
+                color: #A09334;
+            }
+        }
+    
+        > p {
+            margin-bottom: 40px;
+            strong {
+                position: relative;
+                color: black;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    bottom: -0.5vw;
+                    left:0;
+                    right:0;
+                    background-color: black;
+                    height: 1px;
+                }
+            }     
+        }
+    
+        .button {
+            position: relative;
+            padding: 18px 18px 15px 18px;
+            color: #A09334;
+            border: 2px solid #A09334;
+            text-decoration: none;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 17px;
+                left: -2px;
+                width: 2px;
+                bottom: 17px;
+                // height: 14px;
+                background-color: white;
+            }
+        }
+    
+        .img-box {
+            margin: 80px 0 70px;
+            position: relative;
+            max-width: 330px;
+            &::before, &::after {
+                position: absolute;
+                content: '';
+                width: 80%;
+                height: 120%;
+            }
+            &::before {
+                border: 2px solid #CCCCCC;
+                border-right: none;
+            }
+            &::after {
+                border-right: 2px solid #CCCCCC;
+                z-index: 2;
+            }
+    
+            img {
+                position: relative;
+                width:100%;
+                object-fit: contain;
+                z-index: 1;
+            }
+        }
+    }
+
+    
+
+    .full-img-box {
+        position: relative;
+        background-image: url('mobile-images/louis-hansel-wVoP_Q2Bg_A-unsplash@2x.png');
+        background-size: cover;
+        height: 500px;
+        color: white;
+        margin-bottom: 40px;
+
+        .darkening-full {
+            position: absolute;
+            background-image: url('mobile-images/nastuh-abootalebi-JdcJn85xD2k-unsplash.svg');
+            opacity: 0.9;
+            width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .container {
+            position: absolute;
+            z-index: 2;
+            text-align: center;
+            flex-direction: column;
+            h3 {
+                font-family: Avenir Light;
+                text-transform: uppercase;
+                font-size: 100px;
+                color: #A09334;
+                font-style: italic;
+                margin: 50px 0 -80px;
+            }
+            p {
+                font-style: oblique;
+                margin-bottom: 30px;
+                
+            }
+            span {
+                text-transform: uppercase;
+            }
+            span:first-of-type {
+                font-size: 22px;
+                color: #A09334;
+                margin-bottom: 15px;
+            }
+            p, span:nth-of-type(2) {
+                color: rgba(255, 255, 255, 0.867);
+            }
+        }
+    }
+
+    .container {
+        counter-reset: text-box;
+
+        //Re-occurring
+        h4 {
+            font-size: $big;
+            line-height: 1.2;
+            text-transform: uppercase;
+            font-family: Mostin Regular;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-top: 50px;
+            list-style: none;
+            li {
+                position: relative;
+                background: white;
+                display: inline-block;
+                counter-increment: text-box;
+                margin-bottom: 80px;
+                padding: 10px 35px 20px 0;
+                &::before{
+                    display: block;
+                    content: counter(text-box) ".";
+                    color: #A09334;
+                    font-size: $big;
+                    margin-bottom: 5px;
+                }
+                &::after{
+                    position: absolute;
+                    content: '';
+                    border: 2px solid #CCCCCC;
+                    width: 200px;
+                    height: 114%;
+                    top: -7%;
+                    right: -2px;
+                    z-index: -1;
+                }
+                &:nth-child(even) {
+                    padding: 10px 0px 20px 35px;
+                }
+                &:nth-child(even)::after {
+                    left: -2px;
+                }
+                h5 {
+                    font-size: $big;
+                    font-weight: lighter;
+                    margin-bottom: 5px;
+                }
+            } 
+        }
+
+        span {
+            color: #A09334;
+            text-transform: uppercase;
+        }
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background: black;
+    text-align: center;
+    .container {
+        flex-direction: column;
+        h2 {
+            color: white;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.744);
+            margin: 20px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #A09334;
+            margin-bottom: 7px;
+            font-size: 20px;
+        }
+    }
+}

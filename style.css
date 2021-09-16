@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Avenir Light;
+  src: url("fonts/Avenir-Light.ttf");
+}
+
+@font-face {
+  font-family: Avenir Medium;
+  src: url("fonts/Avenir-Medium.ttf");
+}
+
+@font-face {
+  font-family: Avenir Heavy;
+  src: url("fonts/Avenir-Heavy.ttf");
+}
+
+@font-face {
+  font-family: Mostin Regular;
+  src: url("fonts/Mostin-Regular.ttf");
+}
+
+body {
+  font-family: Avenir Light;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  line-height: normal;
+  font-family: Mostin Regular;
+  font-size: 36px;
+}
+
+.container {
+  padding: 0 9vw;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jc-sb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-ai-c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.559);
+}
+
+header {
+  position: relative;
+  height: 812px;
+  background-image: url("mobile-images/lycs-architecture-H77w4l3UWy4-unsplash@2x.png");
+  background-size: cover;
+  background-position: center top;
+  color: white;
+}
+
+header .darkening-linear {
+  position: absolute;
+  background: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(80%, transparent));
+  background: linear-gradient(0deg, black, transparent 80%);
+  opacity: 0.7;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+header .container {
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  padding-top: 13vw;
+  padding-bottom: 9vw;
+}
+
+header img {
+  width: 15vw;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-family: Mostin Regular;
+  margin-bottom: 21px;
+}
+
+header p {
+  width: 75%;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.59);
+}
+
+main .container h2 {
+  margin: 7vw 0 8vw;
+}
+
+main .container h2 span {
+  font-family: Avenir Light;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #A09334;
+}
+
+main .container > p {
+  margin-bottom: 40px;
+}
+
+main .container > p strong {
+  position: relative;
+  color: black;
+}
+
+main .container > p strong::after {
+  position: absolute;
+  content: '';
+  bottom: -0.5vw;
+  left: 0;
+  right: 0;
+  background-color: black;
+  height: 1px;
+}
+
+main .container .button {
+  position: relative;
+  padding: 18px 18px 15px 18px;
+  color: #A09334;
+  border: 2px solid #A09334;
+  text-decoration: none;
+}
+
+main .container .button::before {
+  position: absolute;
+  content: '';
+  top: 17px;
+  left: -2px;
+  width: 2px;
+  bottom: 17px;
+  background-color: white;
+}
+
+main .container .img-box {
+  margin: 80px 0 70px;
+  position: relative;
+  max-width: 330px;
+}
+
+main .container .img-box::before, main .container .img-box::after {
+  position: absolute;
+  content: '';
+  width: 80%;
+  height: 120%;
+}
+
+main .container .img-box::before {
+  border: 2px solid #CCCCCC;
+  border-right: none;
+}
+
+main .container .img-box::after {
+  border-right: 2px solid #CCCCCC;
+  z-index: 2;
+}
+
+main .container .img-box img {
+  position: relative;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 1;
+}
+
+main .full-img-box {
+  position: relative;
+  background-image: url("mobile-images/louis-hansel-wVoP_Q2Bg_A-unsplash@2x.png");
+  background-size: cover;
+  height: 500px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+main .full-img-box .darkening-full {
+  position: absolute;
+  background-image: url("mobile-images/nastuh-abootalebi-JdcJn85xD2k-unsplash.svg");
+  opacity: 0.9;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+main .full-img-box .container {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .full-img-box .container h3 {
+  font-family: Avenir Light;
+  text-transform: uppercase;
+  font-size: 100px;
+  color: #A09334;
+  font-style: italic;
+  margin: 50px 0 -80px;
+}
+
+main .full-img-box .container p {
+  font-style: oblique;
+  margin-bottom: 30px;
+}
+
+main .full-img-box .container span {
+  text-transform: uppercase;
+}
+
+main .full-img-box .container span:first-of-type {
+  font-size: 22px;
+  color: #A09334;
+  margin-bottom: 15px;
+}
+
+main .full-img-box .container p, main .full-img-box .container span:nth-of-type(2) {
+  color: rgba(255, 255, 255, 0.867);
+}
+
+main .container {
+  counter-reset: text-box;
+}
+
+main .container h4 {
+  font-size: 28px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-family: Mostin Regular;
+  margin: 10px 0;
+}
+
+main .container ul {
+  margin-top: 50px;
+  list-style: none;
+}
+
+main .container ul li {
+  position: relative;
+  background: white;
+  display: inline-block;
+  counter-increment: text-box;
+  margin-bottom: 80px;
+  padding: 10px 35px 20px 0;
+}
+
+main .container ul li::before {
+  display: block;
+  content: counter(text-box) ".";
+  color: #A09334;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+main .container ul li::after {
+  position: absolute;
+  content: '';
+  border: 2px solid #CCCCCC;
+  width: 200px;
+  height: 114%;
+  top: -7%;
+  right: -2px;
+  z-index: -1;
+}
+
+main .container ul li:nth-child(even) {
+  padding: 10px 0px 20px 35px;
+}
+
+main .container ul li:nth-child(even)::after {
+  left: -2px;
+}
+
+main .container ul li h5 {
+  font-size: 28px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+}
+
+main .container span {
+  color: #A09334;
+  text-transform: uppercase;
+}
+
+footer {
+  padding: 50px 0;
+  background: black;
+  text-align: center;
+}
+
+footer .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .container h2 {
+  color: white;
+}
+
+footer .container p {
+  color: rgba(255, 255, 255, 0.744);
+  margin: 20px 0;
+}
+
+footer .container a {
+  text-decoration: none;
+  color: #A09334;
+  margin-bottom: 7px;
+  font-size: 20px;
+}
+/*# sourceMappingURL=style.css.map */
