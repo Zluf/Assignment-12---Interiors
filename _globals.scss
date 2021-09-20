@@ -1,3 +1,4 @@
+@import "mixins";
 
 // Size variables
 
@@ -11,6 +12,8 @@ $large: 36px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: white;
 }
 
 @font-face {
@@ -42,12 +45,28 @@ h1, h2 {
     line-height: normal;
     font-family: Mostin Regular;
     font-size: $large;
+    
+}
+
+h2, h3, h4, h5 {
+    color: black;
+}
+
+h4 {
+    font-size: $big;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: Mostin Regular;
+    color: black;
 }
 
 //Helper Classes
 
 .container {
     padding: 0 9vw;
+    @include breakpoint-up(large) {
+        padding: 0 14vw;
+    }
 }
 
 .flex {
@@ -72,4 +91,42 @@ h1, h2 {
 p {
     font-size: $small;
     color: rgba(0, 0, 0, 0.559);
+}
+
+.img-box {
+    position: relative;
+    max-width: 430px;
+    &::before, &::after {
+        position: absolute;
+        content: '';
+        width: 80%;
+        height: 120%;
+    }
+    &::before {
+        border: 2px solid #CCCCCC;
+        border-right: none;
+    }
+    &::after {
+        border-right: 2px solid #CCCCCC;
+        z-index: 2;
+    }
+
+    img {
+        position: relative;
+        width: 100%;
+        object-fit: contain;
+        z-index: 1;
+    }
+    .desktop-img {
+        display: none;
+    }
+
+    @include breakpoint-up(large) {
+        .mobile-img {
+            display: none;
+        }
+        .desktop-img {
+            display: block;
+        }
+    }
 }

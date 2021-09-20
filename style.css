@@ -3,6 +3,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  text-decoration: none;
+  color: white;
 }
 
 @font-face {
@@ -36,8 +38,26 @@ h1, h2 {
   font-size: 36px;
 }
 
+h2, h3, h4, h5 {
+  color: black;
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-family: Mostin Regular;
+  color: black;
+}
+
 .container {
   padding: 0 9vw;
+}
+
+@media (min-width: 64rem) {
+  .container {
+    padding: 0 14vw;
+  }
 }
 
 .flex {
@@ -78,12 +98,55 @@ p {
   color: rgba(0, 0, 0, 0.559);
 }
 
+.img-box {
+  position: relative;
+  max-width: 430px;
+}
+
+.img-box::before, .img-box::after {
+  position: absolute;
+  content: '';
+  width: 80%;
+  height: 120%;
+}
+
+.img-box::before {
+  border: 2px solid #CCCCCC;
+  border-right: none;
+}
+
+.img-box::after {
+  border-right: 2px solid #CCCCCC;
+  z-index: 2;
+}
+
+.img-box img {
+  position: relative;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 1;
+}
+
+.img-box .desktop-img {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .img-box .mobile-img {
+    display: none;
+  }
+  .img-box .desktop-img {
+    display: block;
+  }
+}
+
 header {
   position: relative;
-  height: 812px;
+  height: 100vh;
   background-image: url("mobile-images/lycs-architecture-H77w4l3UWy4-unsplash@2x.png");
   background-size: cover;
-  background-position: center top;
+  background-position: center bottom;
   color: white;
 }
 
@@ -99,6 +162,9 @@ header .darkening-linear {
 }
 
 header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -112,9 +178,13 @@ header .container {
   padding-bottom: 9vw;
 }
 
-header img {
+header .mobile-logo {
   width: 15vw;
   margin: 0 auto;
+}
+
+header .desktop-logo, header a {
+  display: none;
 }
 
 header h1 {
@@ -128,45 +198,91 @@ header p {
   color: rgba(255, 255, 255, 0.59);
 }
 
-main .container h2 {
-  margin: 7vw 0 8vw;
+@media (min-width: 64rem) {
+  header {
+    height: 100vh;
+    background-image: url("images/lycs-architecture-H77w4l3UWy4-unsplash (1)@2x.png");
+  }
+  header .container {
+    width: 100%;
+    padding-top: 5vw;
+    padding-bottom: 7vw;
+  }
+  header .container .top-header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .container .top-header .mobile-logo {
+    display: none;
+  }
+  header .container .top-header .desktop-logo {
+    display: block;
+    width: 16vw;
+  }
+  header .container .top-header a {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  header .container h1 {
+    font-size: 3vw;
+  }
+  header .container p {
+    width: 32%;
+    font-size: 1.2vw;
+  }
 }
 
-main .container h2 span {
+main .section-1 {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .section-1 article h2 {
+  margin: 30px 0 27px;
+}
+
+main .section-1 article h2 span {
   font-family: Avenir Light;
   text-transform: uppercase;
   font-size: 16px;
   color: #A09334;
 }
 
-main .container > p {
+main .section-1 article p {
   margin-bottom: 40px;
 }
 
-main .container > p strong {
+main .section-1 article p strong {
   position: relative;
   color: black;
 }
 
-main .container > p strong::after {
+main .section-1 article p strong::after {
   position: absolute;
   content: '';
-  bottom: -0.5vw;
+  bottom: -0.7vw;
   left: 0;
   right: 0;
   background-color: black;
   height: 1px;
 }
 
-main .container .button {
+main .section-1 article .button {
   position: relative;
-  padding: 18px 18px 15px 18px;
+  padding: 18px 25px 15px 25px;
   color: #A09334;
   border: 2px solid #A09334;
   text-decoration: none;
 }
 
-main .container .button::before {
+main .section-1 article .button::before {
   position: absolute;
   content: '';
   top: 17px;
@@ -176,35 +292,35 @@ main .container .button::before {
   background-color: white;
 }
 
-main .container .img-box {
-  margin: 80px 0 70px;
-  position: relative;
-  max-width: 330px;
+main .section-1 .img-box {
+  margin: 95px auto 85px;
 }
 
-main .container .img-box::before, main .container .img-box::after {
-  position: absolute;
-  content: '';
-  width: 80%;
-  height: 120%;
-}
-
-main .container .img-box::before {
-  border: 2px solid #CCCCCC;
-  border-right: none;
-}
-
-main .container .img-box::after {
-  border-right: 2px solid #CCCCCC;
-  z-index: 2;
-}
-
-main .container .img-box img {
-  position: relative;
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  z-index: 1;
+@media (min-width: 64rem) {
+  main .section-1 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .section-1 article, main .section-1 .img-box {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 15vw 0;
+  }
+  main .section-1 p {
+    width: 72%;
+  }
+  main .section-1 article p strong::after {
+    bottom: -0.2vw;
+  }
+  main .section-1 .img-box {
+    min-width: 35vw;
+  }
 }
 
 main .full-img-box {
@@ -219,23 +335,25 @@ main .full-img-box {
 main .full-img-box .darkening-full {
   position: absolute;
   background-image: url("mobile-images/nastuh-abootalebi-JdcJn85xD2k-unsplash.svg");
-  opacity: 0.9;
   width: 100%;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
 }
 
 main .full-img-box .container {
   position: absolute;
   z-index: 2;
+  height: 100%;
   text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .full-img-box .container h3 {
@@ -250,6 +368,7 @@ main .full-img-box .container h3 {
 main .full-img-box .container p {
   font-style: oblique;
   margin-bottom: 30px;
+  width: 87%;
 }
 
 main .full-img-box .container span {
@@ -266,24 +385,40 @@ main .full-img-box .container p, main .full-img-box .container span:nth-of-type(
   color: rgba(255, 255, 255, 0.867);
 }
 
-main .container {
+@media (min-width: 64rem) {
+  main .full-img-box {
+    background-image: url("images/louis-hansel-wVoP_Q2Bg_A-unsplash@2x.png");
+  }
+  main .full-img-box .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .full-img-box .container h3 {
+    margin: 0 0 -6vw;
+  }
+  main .full-img-box .container p {
+    margin-bottom: 2vw;
+  }
+  main .full-img-box .container p {
+    width: 60%;
+  }
+}
+
+main .articles {
   counter-reset: text-box;
 }
 
-main .container h4 {
-  font-size: 28px;
-  line-height: 1.2;
-  text-transform: uppercase;
-  font-family: Mostin Regular;
-  margin: 10px 0;
-}
-
-main .container ul {
-  margin-top: 50px;
+main .articles ul {
+  margin: 50px 0;
   list-style: none;
 }
 
-main .container ul li {
+main .articles ul h4 {
+  margin-bottom: 50px;
+}
+
+main .articles ul li {
   position: relative;
   background: white;
   display: inline-block;
@@ -292,7 +427,7 @@ main .container ul li {
   padding: 10px 35px 20px 0;
 }
 
-main .container ul li::before {
+main .articles ul li::before {
   display: block;
   content: counter(text-box) ".";
   color: #A09334;
@@ -300,37 +435,163 @@ main .container ul li::before {
   margin-bottom: 5px;
 }
 
-main .container ul li::after {
+main .articles ul li::after {
   position: absolute;
   content: '';
   border: 2px solid #CCCCCC;
-  width: 200px;
+  width: 67%;
   height: 114%;
   top: -7%;
   right: -2px;
   z-index: -1;
 }
 
-main .container ul li:nth-child(even) {
+main .articles ul li:nth-child(odd) {
   padding: 10px 0px 20px 35px;
 }
 
-main .container ul li:nth-child(even)::after {
+main .articles ul li:nth-child(odd)::after {
   left: -2px;
 }
 
-main .container ul li h5 {
+main .articles ul li h5 {
   font-size: 28px;
   font-weight: lighter;
   margin-bottom: 5px;
 }
 
-main .container span {
+@media (min-width: 64rem) {
+  main .articles ul {
+    margin: 200px 0 250px;
+    padding-top: 2vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+    background-color: white;
+  }
+  main .articles ul h4, main .articles ul li {
+    width: 21vw;
+    margin: 0 3vw 40px 0;
+  }
+  main .articles ul h4 {
+    color: white;
+    height: 300px;
+    position: relative;
+    background: black;
+    padding: 2vw;
+    margin-bottom: 0;
+  }
+  main .articles ul h4 .arrow {
+    position: absolute;
+    height: 1px;
+    width: 11vw;
+    background-color: white;
+    bottom: 30px;
+    left: -2vw;
+  }
+  main .articles ul h4 .arrow::before, main .articles ul h4 .arrow::after {
+    position: absolute;
+    content: '';
+    height: 30px;
+    width: 2px;
+    background-color: white;
+    right: 0;
+  }
+  main .articles ul h4 .arrow::before {
+    bottom: 0px;
+    -webkit-transform: skew(45deg) translateX(-12px);
+            transform: skew(45deg) translateX(-12px);
+  }
+  main .articles ul h4 .arrow::after {
+    top: 0px;
+    -webkit-transform: skew(-45deg) translateX(-12px);
+            transform: skew(-45deg) translateX(-12px);
+  }
+  main .articles ul li {
+    padding: 0px 0px 0px 0px;
+  }
+  main .articles ul li::after {
+    display: none;
+  }
+  main .articles ul li:nth-child(odd) {
+    padding: 0px 0px 0px 0px;
+  }
+  main .articles ul::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 110%;
+    right: -20px;
+    top: -5%;
+    border: 2px solid #CCCCCC;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 87.5rem) {
+  main .articles ul h4, main .articles ul li {
+    width: 15vw;
+  }
+}
+
+main .articles .article-box h4 {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+main .articles .article-box h4::before {
+  position: absolute;
+  content: 'Why ### Interiors';
   color: #A09334;
+  font-family: Avenir Light;
   text-transform: uppercase;
+  font-size: 16px;
+  top: -40px;
+}
+
+main .articles .article-box .img-box {
+  margin: 80px 0 130px;
+}
+
+@media (min-width: 64rem) {
+  main .articles .article-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 12vw;
+  }
+  main .articles .article-box:nth-child(even) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  main .articles .article-box article {
+    width: 30vw;
+  }
+  main .articles .article-box article h4 {
+    margin-bottom: 12px;
+  }
+  main .articles .article-box article h4::before {
+    top: -30px;
+  }
+  main .articles .article-box .img-box {
+    min-width: 35vw;
+    margin: 0;
+  }
 }
 
 footer {
+  margin-top: -30px;
   padding: 50px 0;
   background: black;
   text-align: center;
@@ -353,9 +614,20 @@ footer .container p {
 }
 
 footer .container a {
-  text-decoration: none;
+  display: block;
   color: #A09334;
   margin-bottom: 7px;
   font-size: 20px;
+}
+
+@media (min-width: 64rem) {
+  footer {
+    margin: 0;
+    padding: 50px 20vw;
+  }
+  footer .contacts a {
+    display: inline;
+    margin: 0.6vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
